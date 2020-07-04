@@ -15,7 +15,6 @@ before_install:
 script:
 - cd scripts && ./pcb2svg.sh && cd ..
 before_deploy:
-      # Set up git user name and tag this commit
 - git config --local user.name "PCB Gerber Exporter"
 - git config --local user.email "noreply@w4xzr.xyz"
 - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
@@ -25,8 +24,8 @@ before_deploy:
 deploy:
   provider: releases
   api_key:
-    secure: toZ57BWFwtfHNAHed7f/O36V+r6Gwqyz7iUz/FtmKIhjjqxCLRZehlizgjxRpUDWpogglz6poBMcL44zTGQh+8difzkisApDTDbB2kiJHbVqvzvN8HE0npadqv77yfi8TCpx5opw5k6aGVvdqrDtrMWkjs5lhScVXnAuWFdaAo5Z0J/6e+olo5+IrjLCYv1OqWYFjm0y84dlKhmEag05C1HDV3qNB5s8ftPkOOX4F8IfcPDt5tJeWzmbnM02mul887VN04X5oauBnEav9iguwv1nM/AaV2MiOGYEorcHd4j2xWyB8WDdUwLe9z5qZe/f5Cm/mtn7oUkFqoCoPm4I8V4GjmkjA0r4QCuejRRIjhaGDF22d+er2hZkhDceyl0orq/yUZ7pD/5+FwxDtrcw/iruecCsbllJ8kEOS3OjdkhNsg6U5Nz7E4ZmQDLcJkk80s2TKziKMAxwnPohGuFpYU6qAKhuaGdbRLmRGYO/BGLuKiZdnevqjE+JHaUfcfYKdC4jHOGVamuCPdGjUS3xSvOMkxPsMD+OpRGvkaBBZgSvUQPwC4n4HvzBFm09hC15sT2P1mmbMn5XybfT4CIY/qxXaqkDxsj9gfBX1jmH7IlVEjQo19UYnkKWAf24W6M2LqMTidntZdPkpRc8GlXJviTGC+BXkAGCO9xcHCIAY+k=
-  file: Gerbers/KAT-101_gerbers.zip
+    secure: m6TVkKw8S3bxPO6dT/qLCaL/khXn0pZBajf2cqJ1C2ExRYn9qDlPEhCM5Zoj681m1WHp4BVEvkG0YmPcMzYuLvLHOwviLz43lHv0q7je5dd7i999dP4uPW8DHDmH8Ml1fq6QpBbDg5KtKQLXqbGeqlFkQTLNOJh+R1X7iqCqs1avNEWjw0cdAZ9QxKsR9ZMNmMWlwdB6Mp//RT+1dPTOg0cm0ZyuaXRF8n3wxGNz6sveJYjZ2p24qHiWvo7ly2tR7qOzltwIJBfvxod7Nf0OqT7dFBuzcFXKwIYZLHWg6PudOGjkSlW8MxM5wJWynX8CsGIYfRmjyv5+k0eM2Q/dd9VPBrftyubdM8o5kVxo/p48ZaMRTwvDyQk94Gh5SNK/F9+AaES9TvRtu7qD5NYtk6YcQgew484jUppDDtdi6ZTT2nKu6j6T9QHxj2BCsmQoF7IFf1btmI1DmjCIu1CmoJ3iQm2KsXuW9sZYnbpbkqbkf1c9OrN4k4mHotzxwCEiM7F+bjJAoo6pYv5ZhDYyw6cLnliAAYvgRj0vAwOrVblr6zxoU727IyD8PjnGrqNankBVO87Fc7BmN1NFc35NZ5sgi752/s6Bg/G0x7TEU8VJLUgw82bsQrUQrjOFN2II5rRLedNYP1lmkOu+y9ibJ77cFWhHQa50XNeddImP4z8=
+  file: Gerbers/KAT-103_gerbers.zip
   on:
-    repo: w4xzr/KAT-101
+    repo: w4xzr/KAT-103
   skip_cleanup: 'true'
